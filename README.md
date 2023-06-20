@@ -27,6 +27,15 @@
 <li> Block users does not able to log in. </li> 
 
 
+
+## Laravel Multi Authentication System (Admin / User) in Laravel 10
+
+<li> composer require laravel/breeze </li>
+<li> php artisan breeze:install </li>
+<li> npm install </li>
+<li> npm run build </li>
+<li> php artisan serve </li>
+
 # Steps to Run the application on local system
 
 1. Clone this repository in your local system.
@@ -38,7 +47,6 @@
 3. Run this command `php artisan serve` to start the server.
 4. Start the application from `http://127.0.0.1:8000/` using local server.
 5. To access the admin dashboard go to `http://127.0.0.1:8000/admin/login` using local server.
-
 
 --- 
 <h3 align='center'>Hope you like this application :)</h3>
