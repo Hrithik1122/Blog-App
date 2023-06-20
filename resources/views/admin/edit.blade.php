@@ -1,0 +1,55 @@
+<x-admin-layout>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://cdn.ckeditor.com/ckeditor5/29.2.0/classic/ckeditor.js"></script>
+
+    <x-slot name="header">
+        {{-- <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+            {{ __('Dashboard') }}
+        </h2>
+        <div class="ml-auto">
+            <a href="{{ url('/my-posts') }}" class="btn btn-primary">My Posts</a>
+        </div> --}}
+        <div class="flex justify-between">
+            <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+                Dashboard
+            </h2>
+            <div class="ml-auto">
+                <a href="{{ route('admin.dashboard') }}" class="btn btn-primary">Back</a>
+            </div>
+            {{-- <a href="{{ url('/dashboard') }}" class="btn btn-primary">Create New Post</a> --}}
+        </div>
+    </x-slot>
+    
+    <div class="py-12">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                <div class="p-6 text-gray-900">
+                <form action="{{ route('admin.update-post', $posts->id) }}" method="POST">
+                        @method('PUT')
+                        @csrf
+                    <div class="form-group">
+                        <label for="name">Title <span style="color: red">*</span></label>
+                        {{-- {{dd($posts->id)}} --}}
+                        <input type="text" name="title" id="title" class="form-control" placeholder="Enter Title here..." value="{{$posts->title}}" required>
+                    </div><br>
+
+                    <div class="form-group">
+                        <label for="Description">Description <span style="color: red">*</span></label>
+                        <textarea name="description" id="editor" class="form-control" placeholder="Enter Description here...">{{$posts->description}}</textarea>
+                    </div><br>
+                    <button type="submit" class="btn btn-primary">Update</button>
+                </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        ClassicEditor
+            .create(document.querySelector('#editor'))
+            .catch(error => {
+                console.error(error);
+            });
+    </script>
+</x-admin-layout>
