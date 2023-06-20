@@ -2,8 +2,6 @@
 
 <b> Scenario : </b> Suppose you have a website named as myblogs.com, and in your website user can add new blogs so that other users can see their blogs. So whenever any random user opens your site the list of blogs should be seen. 
 
-For this task you have to do:
-
 <b>User Panel : </b> 
 
 <li> Sign up and login functionality for user. </li> 
